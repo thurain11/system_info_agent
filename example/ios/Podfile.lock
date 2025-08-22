@@ -1,0 +1,28 @@
+PODS:
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - system_info_agent (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - system_info_agent (from `.symlinks/plugins/system_info_agent/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+  system_info_agent:
+    :path: ".symlinks/plugins/system_info_agent/ios"
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
+  system_info_agent: c30ea5614f815939fa101599ea97287cda287754
+
+PODFILE CHECKSUM: 63b5eec5379a541e2a6995a74981f0e19840c3e8
+
+COCOAPODS: 1.16.2
