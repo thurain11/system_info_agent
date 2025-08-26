@@ -1,6 +1,7 @@
 name: system_info_agent
 description: "Plugin for user agent."
 version: 1.0.1
+license: MIT
 repository: https://github.com/thurain11/system_info_agent/tree/main
 homepage: https://github.com/thurain11/system_info_agent/tree/master
 issue_tracker: https://github.com/thurain11/system_info_agent/issues
