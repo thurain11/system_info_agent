@@ -19,9 +19,8 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       await SystemInfoAgent.init();
-      initPlatformState();
     });
   }
 
@@ -35,12 +34,11 @@ class _MyAppState extends State<MyApp> {
       // platformVersion = SystemInfoAgent.userAgent!;
       userAgent = SystemInfoAgent.userAgent!;
       webViewUserAgent = SystemInfoAgent.webViewUserAgent!;
-      debugPrint("Agent -------------------> $userAgent");
-      debugPrint("Agent -------------------> $webViewUserAgent");
+      debugPrint("User Agent ----> $userAgent");
+      debugPrint("Web User Agent ----> $webViewUserAgent");
     } on PlatformException {
       userAgent = 'Failed to get platform version.';
     }
-
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
@@ -52,20 +50,34 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-          actions: [
-            IconButton(
-              onPressed: () {
-                print(SystemInfoAgent.webViewUserAgent);
-                print(SystemInfoAgent.userAgent);
-              },
-              icon: Icon(Icons.add),
+
+        appBar: AppBar(title: const Text('System Info Agent app')),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            userAgent == null || webViewUserAgent == null
+                ? Center(child: Text("User Agent"))
+                : Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("$userAgent"),
+                        SizedBox(height: 20),
+                        Text("$webViewUserAgent"),
+                      ],
+                    ),
+                  ),
+            SizedBox(height: 40),
+
+            OutlinedButton(
+              onPressed: initPlatformState,
+              child: Text("Get user agent"),
             ),
           ],
         ),
-        body: Center(child: Text('Running on:')),
       ),
     );
   }

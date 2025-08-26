@@ -47,7 +47,7 @@ void main() async {
 
   // Get WebView user agent
   String? webViewUserAgent = SystemInfoAgent.webViewUserAgent;
-  print('WebView User Agent: $webViewUserAgent');
+  print('Web View User Agent: $webViewUserAgent');
 
 
 }
@@ -57,4 +57,4 @@ void main() async {
 This package is licensed under the [MIT License](LICENSE). See the `LICENSE` file for details.
 
 ## Support 🎗️
-For issues or questions, please open an issue on the [GitHub repository](https://github.com/thurain11/network_to_ui_package/tree/master) or contact the maintainer at [thurainhein097@gmail.com].
+For issues or questions, please open an issue on the [GitHub repository](https://github.com/thurain11/system_info_agent/tree/master) or contact the maintainer at [thurainhein097@gmail.com].
